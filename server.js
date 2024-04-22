@@ -61,8 +61,4 @@ mongoose.connection.once('open',()=>{
 
 
 
-
-// ws.send(`{
-//     "command":"getCalendar"
-// }`)
 app.listen(PORT,()=> console.log(`Server running on ${PORT}`))
