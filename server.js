@@ -52,7 +52,7 @@ app.patch('/updateUserSellNBuy',updateUserSellNBuy)
 
 app.patch('/resetUser',resetUser)
 
-app.patch('/deleteStock',deleteStock)
+app.post('/deleteStock',deleteStock)
 
 
 
