@@ -67,4 +67,4 @@ mongoose.connection.once('open',()=>{
 
 
 
-app.listen(3500,()=> console.log(`Server running on 3500`))
+app.listen(10000,()=> console.log(`Server running on 10k`))
