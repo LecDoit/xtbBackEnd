@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-
+const secret = 'mongodb+srv://pikajunglist:Baddadan120!@cluster0.dgdbkuo.mongodb.net/XtbUser?retryWrites=true&w=majority'
 
 const connectDB = async()=>{
     try{
-        await mongoose.connect(process.env.DATABASE_URI,{
+        await mongoose.connect(secret,{
             useUnifiedTopology:true,
             useNewUrlParser:true
         })
