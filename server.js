@@ -35,14 +35,14 @@ app.get('/',(req,res)=>{
 
 
 
-
+// helpers
 app.get('/getAllUsers',getAllUsers)
 
 app.post('/createUser', createUser)
 
 app.patch('/resetUser',resetUser)
 
-
+// Endpoints used on Web
 app.post('/getUser', getUser)
 app.patch('/deleteStock',deleteStock)
 app.patch('/updateUserSellNBuy',updateUserSellNBuy)
