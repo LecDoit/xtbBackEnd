@@ -6,10 +6,10 @@ const connectDB = require('./dbConn')
 const express = require('express');
 const app = express()
 
-const {createUser,getAllUsers,getUser,addStock,resetUser,deleteStock,updateUserSellNBuy} = require('./controllers/userController.js')
+const {createUser,getAllUsers,getUser,addStock,resetUser,deleteStock,updateUserSellNBuy,loginUser,signupUser} = require('./controllers/userController.js')
 
 
-const Users = require('./usersModel')
+const Users = require('./stockModel')
 
 
 // Connect to mongo db
@@ -31,6 +31,14 @@ app.get('/',(req,res)=>{
 
 
 })
+
+
+// login
+app.post('/login',loginUser)
+
+
+//signup
+app.post('/signup',signupUser)
 
 
 

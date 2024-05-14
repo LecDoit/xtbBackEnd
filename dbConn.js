@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 
-const secret = 'mongodb+srv://pikajunglist:Baddadan120!@cluster0.dgdbkuo.mongodb.net/XtbUser?retryWrites=true&w=majority'
+// const secret = 'mongodb+srv://pikajunglist:Baddadan120!@cluster0.dgdbkuo.mongodb.net/XtbUser?retryWrites=true&w=majority'
 
 const connectDB = async()=>{
     try{
-        await mongoose.connect(secret,{
+        await mongoose.connect(process.env.MONGO_URI,{
             useUnifiedTopology:true,
             useNewUrlParser:true
         })
