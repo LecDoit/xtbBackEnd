@@ -6,10 +6,11 @@ const connectDB = require('./dbConn')
 const express = require('express');
 const app = express()
 
-const {createUser,getAllUsers,getUser,addStock,resetUser,deleteStock,updateUserSellNBuy,loginUser,signupUser} = require('./controllers/userController.js')
 
 
-const Users = require('./stockModel')
+const stockRoutes = require('./routes/stocks')
+const userRoutes = require('./routes/user')
+
 
 
 // Connect to mongo db
@@ -19,7 +20,11 @@ connectDB()
 // middleware
 app.use(express.json())
 
-app.use(cors())
+app.use(cors({
+  origin:'*',
+  credentials:true,
+  optionsSuccessStatus:200
+}))
 
 app.use((req,res,next)=>{
   console.log(req.path, req.method)
@@ -32,31 +37,9 @@ app.get('/',(req,res)=>{
 
 })
 
+app.use('/stocks',stockRoutes)
 
-// login
-app.post('/login',loginUser)
-
-
-//signup
-app.post('/signup',signupUser)
-
-
-
-
-// helpers
-app.get('/getAllUsers',getAllUsers)
-
-app.post('/createUser', createUser)
-
-app.patch('/resetUser',resetUser)
-
-// Endpoints used on Web
-app.post('/getUser', getUser)
-app.patch('/deleteStock',deleteStock)
-app.patch('/updateUserSellNBuy',updateUserSellNBuy)
-app.patch('/addStock',addStock)
-
-
+app.use('/users',userRoutes)
 
 
 mongoose.connection.once('open',()=>{

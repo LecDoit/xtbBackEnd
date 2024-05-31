@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const stockSchema = new Schema({
-    username:{
+    email:{
         type:String,
         required:true,
     },
@@ -18,7 +18,11 @@ const stockSchema = new Schema({
 
         
     }]
+
+
 },{timestamps:true})
+
+
 
 module.exports = mongoose.model('stocks',stockSchema)
 
