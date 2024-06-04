@@ -1,12 +1,15 @@
 const express = require('express')
 
-const {getAllUsers,getUser,addStock,resetUser,deleteStock,updateUserSellNBuy} = require('../controllers/stockController')
+const {getAllUsers,getUser,addStock,resetUser,deleteStock,updateUserSellNBuy,getCredentials} = require('../controllers/stockController')
 
 const router = express.Router()
 
 const requireAuth = require('../middleware/requireAuth')
 
 router.use(requireAuth)
+
+// get credentials
+router.get('/getCredentials',getCredentials)
 
 // helpers
 router.get('/getAllUsers',getAllUsers)

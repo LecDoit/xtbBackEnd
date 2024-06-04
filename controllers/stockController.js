@@ -1,6 +1,14 @@
 const Stock = require('../stockModel')
 const Users = require('../userModel')
 
+// get credentials
+const getCredentials = async(req,res)=>{
+    const credentials = 
+        {user:16313473,
+        password:'Xtbxtbxtb123'
+        }
+    res.status(200).json(credentials)
+}
 
 //get all users
 
@@ -132,7 +140,8 @@ module.exports = {
     addStock,
     resetUser,
     deleteStock,
-    updateUserSellNBuy
+    updateUserSellNBuy,
+    getCredentials
 
 }
 
