@@ -16,7 +16,14 @@ const stockSchema = new Schema({
 
             start:{type:Number},
             period:{type:Number},
-            ticks:{type:Number}
+            ticks:{type:Number},
+
+            trades:[{
+                tradeDate:{type:Date},
+                price:{type:Number},
+                quantity:{type:Number},
+                type:{type:String,enum:['buy','sell']}
+            }]
 
         
     }]
