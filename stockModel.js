@@ -9,6 +9,8 @@ const stockSchema = new Schema({
     stocks:[{
         
             symbol:{type:String},
+            description:{type:String},
+            categoryName:{type:String},
             buy:{type:Number},
             sell:{type:Number},
 
